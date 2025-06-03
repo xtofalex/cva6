@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run naja-action
-        uses: najaeda/naja-action
+        uses: najaeda/naja-action@v1
         with:
           design_home: "benchs/black_parrot"
           design_config: "benchs/black_parrot/config.mk" 
