@@ -1,0 +1,16 @@
+name: naja-action
+on: [push, pull_request]
+
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run naja-action
+        uses: najaeda/naja-action
+        with:
+          design_home: "benchs/black_parrot"
+          design_config: "benchs/black_parrot/config.mk" 
