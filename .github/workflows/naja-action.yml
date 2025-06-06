@@ -10,7 +10,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run naja-action
-        uses: najaeda/naja-action@52007061a24be20ea9f9e7d1f3cca48dcda32f50
+        uses: najaeda/naja-action@9f2174b15e238c0266d1b65daa0fd3d4d1719b15
         with:
+          mode: "direct"
           design_home: "benchs/black_parrot"
           design_config: "benchs/black_parrot/config.mk" 
+        env:
+          CVA6_REPO_DIR: "<path_to_cva6_repo>"
+          HPDCACHE_DIR: "${CVA6_REPO_DIR}/core/cache_subsystem/hpdcache"
+          TARGET_CFG: "cv64a6_imafdc_sv39"
