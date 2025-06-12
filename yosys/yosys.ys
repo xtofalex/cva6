@@ -1,0 +1,6 @@
+plugin -i slang
+slang_version
+read_slang --top cva6 -f /Users/xtof/WORK/cva6/core/Flist.cva6 -keep-hierarchy
+hierarchy
+synth
+stat
