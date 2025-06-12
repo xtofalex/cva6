@@ -12,7 +12,7 @@ jobs:
           submodules: recursive
 
       - name: Run naja-action
-        uses: najaeda/naja-action@6220b097a2b9cae728bbf98620ec540def2e7110
+        uses: xtofalex/naja-action@1198b1b0b64d1e4cd83ed028284c5740ad3c57d5
         with:
           mode: "direct"
           design_config: "yosys/yosys.ys"

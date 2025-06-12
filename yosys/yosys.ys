@@ -5,5 +5,6 @@ yosys -import
 slang_version
 read_slang --top cva6 -f "$cva6_repo_dir/core/Flist.cva6" -keep-hierarchy
 hierarchy
-synth
+synth_xilinx -top cva6 
 stat
+write_verilog naja_netlist.v
