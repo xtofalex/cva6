@@ -13,8 +13,7 @@ jobs:
         uses: najaeda/naja-action@9f2174b15e238c0266d1b65daa0fd3d4d1719b15
         with:
           mode: "direct"
-          design_home: "benchs/black_parrot"
-          design_config: "benchs/black_parrot/config.mk" 
+          design_config: "yosys/yosys.ys"
         env:
           CVA6_REPO_DIR: "<path_to_cva6_repo>"
           HPDCACHE_DIR: "${CVA6_REPO_DIR}/core/cache_subsystem/hpdcache"
