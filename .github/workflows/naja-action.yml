@@ -13,7 +13,7 @@ jobs:
         uses: najaeda/naja-action@660320e60226ac1de28d0236a58aacf83d70f0dd        
         with:
           mode: "direct"
-          design_config: "yosys/yosys.ys"
+          design_config: "cva6/yosys/yosys.ys"
         env:
           CVA6_REPO_DIR: "<path_to_cva6_repo>"
           HPDCACHE_DIR: "${CVA6_REPO_DIR}/core/cache_subsystem/hpdcache"
