@@ -15,6 +15,6 @@ jobs:
           mode: "direct"
           design_config: "yosys/yosys.ys"
         env:
-          CVA6_REPO_DIR: "<path_to_cva6_repo>"
+          CVA6_REPO_DIR: "${{ github.workspace }}"
           HPDCACHE_DIR: "${CVA6_REPO_DIR}/core/cache_subsystem/hpdcache"
           TARGET_CFG: "cv64a6_imafdc_sv39"
