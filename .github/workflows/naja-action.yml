@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run naja-action
-        uses: najaeda/naja-action@660320e60226ac1de28d0236a58aacf83d70f0dd        
+        uses: najaeda/naja-action@faa8a0ce5687b9ef54148c3ff63ddab5bf74b1ea
         with:
           mode: "direct"
           design_config: "yosys/yosys.ys"
