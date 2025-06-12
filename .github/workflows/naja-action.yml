@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Run naja-action
         uses: najaeda/naja-action@faa8a0ce5687b9ef54148c3ff63ddab5bf74b1ea
