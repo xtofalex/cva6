@@ -1,4 +1,6 @@
+yosys -import
 plugin -i slang
+yosys -import
 slang_version
 read_slang --top cva6 -f "$env(CVA6_REPO_DIR)/core/Flist.cva6 -keep-hierarchy
 hierarchy
