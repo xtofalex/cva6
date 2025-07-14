@@ -11,20 +11,20 @@ jobs:
         with:
           submodules: recursive
 
-      #- name: Run naja-action
-      #  uses: xtofalex/naja-action@main
-      #  with:
-      #    mode: "direct"
-      #    design_config: "yosys/yosys.ys"
-      #  env:
-      #    CVA6_REPO_DIR: "${{ github.workspace }}"
-      #    HPDCACHE_DIR: "${{ github.workspace }}/core/cache_subsystem/hpdcache"
-      #    TARGET_CFG: "cv64a6_imafdc_sv39"
-
       - name: Run naja-action
         uses: xtofalex/naja-action@main
         with:
-          mode: "orfs"
-          design_config: "oss-eda/config.mk"
+          mode: "direct"
+          design_config: "oss-eda/yosys.ys"
         env:
           CVA6_REPO_DIR: "${{ github.workspace }}"
+          HPDCACHE_DIR: "${{ github.workspace }}/core/cache_subsystem/hpdcache"
+          TARGET_CFG: "cv64a6_imafdc_sv39"
+
+      #- name: Run naja-action
+      #  uses: xtofalex/naja-action@main
+      #  with:
+      #    mode: "orfs"
+      #    design_config: "oss-eda/config.mk"
+      #  env:
+      #    CVA6_REPO_DIR: "${{ github.workspace }}"
