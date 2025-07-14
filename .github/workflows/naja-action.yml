@@ -15,7 +15,7 @@ jobs:
         uses: xtofalex/naja-action@main
         with:
           mode: "direct"
-          design_config: "oss-eda/yosys.ys"
+          design_config: "oss_eda/yosys.ys"
         env:
           CVA6_REPO_DIR: "${{ github.workspace }}"
           HPDCACHE_DIR: "${{ github.workspace }}/core/cache_subsystem/hpdcache"
