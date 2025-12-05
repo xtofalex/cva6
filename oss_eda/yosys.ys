@@ -1,10 +1,26 @@
 set cva6_repo_dir "$::env(CVA6_REPO_DIR)"
-yosys -import
-plugin -i slang
-yosys -import
-slang_version
-read_slang --top cva6 -f "$cva6_repo_dir/core/Flist.cva6" -keep-hierarchy
-hierarchy
-synth_xilinx -top cva6 
-stat
-write_verilog naja_netlist.v
+yosys plugin -i slang
+yosys slang_version
+yosys read_slang --top cva6 -f "$cva6_repo_dir/core/Flist.cva6" -keep-hierarchy
+yosys hierarchy -top cva6
+
+yosys proc
+yosys proc_dff
+yosys opt
+yosys memory
+yosys opt
+yosys fsm
+yosys opt
+
+# Expand internal cell types into real explicit Verilog cells
+yosys techmap
+yosys simplemap
+yosys opt_clean
+
+# Generic synthesis
+yosys synth -noabc -top cva6 
+
+# Write purely structural Verilog:
+yosys write_verilog -noexpr -nodec -attr2comment naja_netlist.v
+yosys stat
+yosys write_verilog naja_netlist.v
