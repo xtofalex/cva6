@@ -12,9 +12,8 @@ jobs:
           submodules: recursive
 
       - name: Run naja-action
-        uses: xtofalex/naja-action@main
+        uses: keplertech/kepler-formal-action@main
         with:
-          mode: "direct"
           design_config: "oss_eda/yosys.ys"
         env:
           CVA6_REPO_DIR: "${{ github.workspace }}"
