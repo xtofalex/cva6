@@ -23,12 +23,15 @@ cva6_repo_dir = os.environ.get("CVA6_REPO_DIR")
 if not cva6_repo_dir:
   raise EnvironmentError("CVA6_REPO_DIR environment variable is not set")
 
-config = netlist.SystemVerilogConfig(
+svconfig = netlist.SystemVerilogConfig(
   top='cva6',
   flist=os.path.join(cva6_repo_dir, "core", "Flist.cva6"),
   diagnostics_report_path="diags.log"
 )
 
-top = netlist.load_systemverilog([], config=config)
+top = netlist.load_system_verilog([], config=svconfig)
 
-top.dump_verilog("cva6_naja.v")
+
+dump_config = netlist.VerilogDumpConfig
+dump_config.dumpRTLInfosAsAttributes = True
+top.dump_verilog("cva6_naja.v", config=dump_config)
